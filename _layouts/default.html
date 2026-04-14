@@ -34,7 +34,7 @@
               <a
                 class="button"
                 href="{% if page.primary_cta_external %}{{ page.primary_cta_url }}{% else %}{{ page.primary_cta_url | relative_url }}{% endif %}"
-                {% if page.primary_cta_external %}target="_blank" rel="noopener nofollow"{% endif %}
+                {% if page.primary_cta_external %}target="_blank" rel="noopener"{% endif %}
               >
                 {{ page.primary_cta_label }}
               </a>
@@ -44,7 +44,7 @@
               <a
                 class="button button--ghost"
                 href="{% if page.secondary_cta_external %}{{ page.secondary_cta_url }}{% else %}{{ page.secondary_cta_url | relative_url }}{% endif %}"
-                {% if page.secondary_cta_external %}target="_blank" rel="noopener nofollow"{% endif %}
+                {% if page.secondary_cta_external %}target="_blank" rel="noopener"{% endif %}
               >
                 {{ page.secondary_cta_label }}
               </a>
