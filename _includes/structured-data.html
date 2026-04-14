@@ -1,0 +1,40 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": {{ page.lang | default: site.lang | jsonify }}
+    },
+    {
+      "@type": "WebPage",
+      "name": {{ page.title | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | append: '/' | jsonify }}
+      }
+    }{% if page.faq %},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {% for item in page.faq %}
+        {
+          "@type": "Question",
+          "name": {{ item.question | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.answer | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

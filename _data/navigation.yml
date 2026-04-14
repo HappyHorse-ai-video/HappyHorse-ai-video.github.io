@@ -1,0 +1,11 @@
+main:
+  - title: Home
+    url: /
+  - title: HappyHorse AI
+    url: /happyhorse-ai/
+  - title: API
+    url: /happyhorse-api/
+  - title: GitHub
+    url: /happyhorse-github/
+  - title: FAQ
+    url: /faq/

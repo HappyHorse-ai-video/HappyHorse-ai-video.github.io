@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
+      <img src="{{ '/assets/images/happyhorse-mark.svg' | relative_url }}" alt="" width="44" height="44">
+      <span class="brand__copy">
+        <strong>{{ site.title }}</strong>
+        <span>{{ site.tagline }}</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {% for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>
+        {{ item.title }}
+      </a>
+      {% endfor %}
+    </nav>
+
+    <a class="button button--small" href="https://www.happy-horse.net" target="_blank" rel="noopener nofollow">
+      Visit experience site
+    </a>
+  </div>
+</header>

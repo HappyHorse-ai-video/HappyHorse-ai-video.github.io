@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="HappyHorse AI mark">
+  <defs>
+    <linearGradient id="hh-a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb25b"/>
+      <stop offset="100%" stop-color="#e66a2c"/>
+    </linearGradient>
+    <linearGradient id="hh-b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b698a"/>
+      <stop offset="100%" stop-color="#183244"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="42" fill="#fff6ed"/>
+  <path d="M35 38h22v31h46V38h22v84h-22V88H57v34H35z" fill="url(#hh-b)"/>
+  <path d="M112 30c0-8.8 7.2-16 16-16s16 7.2 16 16-7.2 16-16 16-16-7.2-16-16z" fill="url(#hh-a)"/>
+  <path d="M23 122c22 10 46 15 72 15 16 0 30-2 42-6" fill="none" stroke="url(#hh-a)" stroke-linecap="round" stroke-width="10"/>
+</svg>

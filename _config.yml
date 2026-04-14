@@ -1,0 +1,42 @@
+title: HappyHorse AI
+tagline: Independent navigation hub for HappyHorse AI searches
+description: >-
+  Independent GitHub Pages site covering HappyHorse AI, Happy Horse,
+  HappyHorse API, AI Video Generator, and GitHub-related search intent.
+url: "https://happyhorse-ai-video.github.io"
+baseurl: ""
+lang: en
+locale: en_US
+timezone: Asia/Shanghai
+theme: jekyll-theme-cayman
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: compressed
+logo: /assets/images/happyhorse-mark.svg
+repository: HappyHorse-ai-video/HappyHorse-ai-video.github.io
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+feed:
+  path: feed.xml
+social:
+  name: HappyHorse AI Guide
+  links:
+    - https://happyhorse-ai-video.github.io/
+    - https://github.com/HappyHorse-ai-video/HappyHorse-ai-video.github.io
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    {% include head-custom.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% include structured-data.html %}
+  </head>
+  <body>
+    <div class="site-shell">
+      {% include site-header.html %}
+
+      <main>
+        <section class="page-hero">
+          <div class="container page-hero__inner">
+            <p class="eyebrow">{{ page.hero_kicker | default: site.tagline }}</p>
+            <h1>{{ page.hero_title | default: page.title }}</h1>
+            {% if page.hero_intro %}
+            <p class="page-hero__intro">{{ page.hero_intro }}</p>
+            {% endif %}
+
+            {% if page.hero_tags %}
+            <ul class="hero-tags" aria-label="Key topics">
+              {% for tag in page.hero_tags %}
+              <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="hero-actions">
+              {% if page.primary_cta_label and page.primary_cta_url %}
+              <a
+                class="button"
+                href="{% if page.primary_cta_external %}{{ page.primary_cta_url }}{% else %}{{ page.primary_cta_url | relative_url }}{% endif %}"
+                {% if page.primary_cta_external %}target="_blank" rel="noopener nofollow"{% endif %}
+              >
+                {{ page.primary_cta_label }}
+              </a>
+              {% endif %}
+
+              {% if page.secondary_cta_label and page.secondary_cta_url %}
+              <a
+                class="button button--ghost"
+                href="{% if page.secondary_cta_external %}{{ page.secondary_cta_url }}{% else %}{{ page.secondary_cta_url | relative_url }}{% endif %}"
+                {% if page.secondary_cta_external %}target="_blank" rel="noopener nofollow"{% endif %}
+              >
+                {{ page.secondary_cta_label }}
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </section>
+
+        <article class="container page-content">
+          {{ content }}
+        </article>
+
+        {% if page.related_cards %}
+        <section class="container related-section">
+          <div class="section-heading">
+            <p class="eyebrow">Continue exploring</p>
+            <h2>Related pages</h2>
+          </div>
+          <div class="card-grid">
+            {% for item in page.related_cards %}
+            <a class="card" href="{{ item.url | relative_url }}">
+              <span class="card__title">{{ item.title }}</span>
+              <span class="card__copy">{{ item.description }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+        {% if page.faq %}
+        <section class="container faq-section" id="faq">
+          <div class="section-heading">
+            <p class="eyebrow">Common questions</p>
+            <h2>{{ page.faq_title | default: 'FAQ' }}</h2>
+          </div>
+          <div class="faq-list">
+            {% for item in page.faq %}
+            <details {% if forloop.first %}open{% endif %}>
+              <summary>{{ item.question }}</summary>
+              <p>{{ item.answer }}</p>
+            </details>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      </main>
+
+      {% include site-footer.html %}
+    </div>
+  </body>
+</html>
